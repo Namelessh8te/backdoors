@@ -22,4 +22,4 @@ Tools designed for maintaining access to systems and proof-of-concept demonstrat
 |*yolo-openssl.tgz* | OpenSSL backdoor to add "yolo shellme" extension |
 |*Zombie.tgz* | Multi-threaded Linux backdoor with command execution |
 
-These files are available under a Attribution-NonCommercial-NoDerivatives 4.0 International license.
+These files are available under the 3-clause BSD license.
