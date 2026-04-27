@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backdoor GUI Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #log { border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+    <h1>Backdoor GUI Test</h1>
+    <p>Type something to test keystroke capture:</p>
+    <input type="text" id="input" placeholder="Type here...">
+    <div id="log"></div>
+
+    <script>
+        const input = document.getElementById('input');
+        const log = document.getElementById('log');
+
+        input.addEventListener('keydown', (e) => {
+            log.innerHTML += `Key pressed: ${e.key} (code: ${e.code})<br>`;
+            log.scrollTop = log.scrollHeight;
+        });
+
+        input.addEventListener('keyup', (e) => {
+            log.innerHTML += `Key released: ${e.key}<br>`;
+            log.scrollTop = log.scrollHeight;
+        });
+    </script>
+</body>
+</html>
