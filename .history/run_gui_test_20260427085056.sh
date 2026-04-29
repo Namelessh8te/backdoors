@@ -18,9 +18,8 @@ docker build -t backdoor-sandbox .
 # For GUI test, exposing port 8000 for local access only.
 
 docker run -it --rm \
-  -v "$WORKDIR":/workspace \
+  -v $(pwd):/workspace \
   -p 8000:8000 \
-  --network none \
   --cap-drop=ALL \
   backdoor-sandbox \
-  bash -lc "cd /workspace && python3 -m http.server 8000"
+  bash -c "cd /workspace && python3 -m http.server 8000"
